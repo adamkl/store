@@ -11,21 +11,16 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" scope="TEST">
-      <library name="JUnit5.3">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/junit-jupiter-api-5.5.0-M1.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/apiguardian-api-1.0.0.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/opentest4j-1.1.1.jar!/" />
-          <root url="jar://$MODULE_DIR$/lib/junit-platform-commons-1.5.0-M1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.mockito:mockito-core:2.27.0" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy:1.9.10" level="project" />
     <orderEntry type="library" name="Maven: net.bytebuddy:byte-buddy-agent:1.9.10" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.6" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.5.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-engine:1.5.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.5.0-M1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.5.0-M1" level="project" />
   </component>
 </module>

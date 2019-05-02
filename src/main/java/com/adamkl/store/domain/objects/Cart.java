@@ -64,7 +64,7 @@ public class Cart {
 
         Arrays.stream(items).forEach(itemToAdd -> {
             this.items.stream()
-                    .filter(existingItem -> itemToAdd.name == existingItem.name)
+                    .filter(existingItem -> itemToAdd.name.equals(existingItem.name))
                     .findFirst()
                     .ifPresentOrElse(existingItem -> existingItem.addQuantity(itemToAdd.getQuantity()), () -> newItems.add(itemToAdd));
         });
@@ -84,7 +84,7 @@ public class Cart {
      */
     public void updateItemQuantity(String name, int amount) throws IllegalArgumentException {
         this.items.stream()
-                .filter(item -> item.name == name)
+                .filter(item -> item.name.equals(name))
                 .findFirst()
                 .ifPresentOrElse(item -> item.addQuantity(amount), () -> {
                     throw new IllegalArgumentException("item not found");

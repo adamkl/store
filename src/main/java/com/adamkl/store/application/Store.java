@@ -4,7 +4,7 @@ public interface Store {
     /*
      * Add item with given unique name (ID) and quantity into * cart. Name is case-sensitive.
      */
-    void addItemToCart(String name, int quantity);
+    void addItemToCart(String shopperId, String name, int quantity);
 
     /*
      * Add item with given unique name (ID) and price into store * inventory. Name is case-sensitive.
@@ -12,12 +12,12 @@ public interface Store {
     void addItemToStore(String name, double price);
 
     /*
-     * Get items in cart, consolidating all duplicate items, * ordered by item name (ascending).
+     * Get items in cart, consolidating all duplicate items (duplicates are consolidated when added), * ordered by item name (ascending).
      */
-    LineItem[] getCartItems();
+    LineItem[] getCartItems(String shopperId);
 
     /*
      * Get total cost of items currently in cart.
      */
-    double getCartTotal();
+    double getCartTotal(String shopperId);
 }

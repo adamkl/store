@@ -96,6 +96,11 @@ public class CartTest {
         }
 
         @Test
+        void shouldThrowErrorIfItemNotFound() {
+            assertThrows(IllegalArgumentException.class, () -> cart.updateItemQuantity("Item3", 2));
+        }
+
+        @Test
         void shouldUpdateQuantityOfItem() {
             cart.updateItemQuantity("Item1", 2);
             var items = cart.getItems();
@@ -103,7 +108,44 @@ public class CartTest {
             assertEquals(3, items[0].getQuantity());
         }
 
+        @Test
+        void shouldRemoveItemWhenQuantityReducedToZero() {
+            cart.updateItemQuantity("Item1", -1);
+            var items = cart.getItems();
+            assertEquals(1, items.length);
+            assertEquals("Item2", items[0].name);
+            assertEquals(1, items[0].getQuantity());
+        }
     }
+
+    @Nested
+    @DisplayName("Remove item")
+    class RemoveItemFeature {
+        Cart cart;
+
+        @BeforeEach
+        public void setup() {
+            cart = new Cart("1", "1", new CartItem[]{
+                    new CartItem("Item1", 1),
+                    new CartItem("Item2", 1)
+            });
+        }
+
+        @Test
+        void shouldRemoveItem() {
+            cart.removeItem("Item1");
+            var items = cart.getItems();
+            assertEquals(1, items.length);
+            assertEquals("Item2", items[0].name);
+            assertEquals(1, items[0].getQuantity());
+        }
+
+        @Test
+        void shouldThrowErrorIfItemNotFound() {
+            assertThrows(IllegalArgumentException.class, () -> cart.removeItem("Item3"));
+        }
+    }
+
 }
 
 

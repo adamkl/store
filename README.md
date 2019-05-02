@@ -7,7 +7,7 @@ I decided to structure the codebase follwing a [Ports & Adapters](https://fidelo
 
 ### Framework
 
-Contains the code required to interact with the outside world (e.g. this would be where code for GraphQL schema/resolvers, REST handlers, Server-rendered UI, Database connections, etc. would go). In this example, we have simple repository implementations for managing carts and inventory items
+Contains the code required to interact with the outside world (e.g. this would be where code for GraphQL schema/resolvers, REST handlers, Server-rendered UI, Database connections, etc. would go). In this example, I only had time to create simple mock implementations of the repositories, and a beginnings of a CLI based API
 
 ### Application
 
@@ -15,7 +15,7 @@ Contains the code required execute application use cases. Orchestrates operation
 
 ### Domain
 
-Contains the code that defines the business domain logic. Should be made up of data structures, functions, or classes that encapsulate business functionality. Here I created new objects like `Cart`, `InventoryItem`, `TaxCalculator`, and `DiscountCalculator`
+Contains the code that defines the business domain logic. Should be made up of data structures, functions, or classes that encapsulate business functionality. Here I created new objects like `Cart`, `CartItem`, and `InventoryItem`. I would have liked to implement a strategy-based pattern for calculating taxes, but I figured I had taken too much time working on this
 
 ### Utils
-Contains crosscutting functionality that can be used across all application layers (authZ, logging, etc.)
+Contains crosscutting functionality that can be used across all application layers (authZ, logging, etc.). I didn't have time to implement this, but I would have liked to have created some custom `annotations` that could be used to add authorization checks to the `addItemToCart` (only accessible by a shopper) and `addItemToStore` (only accessible by a store owner)

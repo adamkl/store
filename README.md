@@ -1,5 +1,5 @@
 # store
-Programming Exercise for Oracle/NetSuite
+Programming Exercise for past job interview
 
 I decided to structure the codebase follwing a [Ports & Adapters](https://fideloper.com/hexagonal-architecture)/[Clean Architecture](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)/[Onion Architecture](http://jeffreypalermo.com/blog/the-onion-architecture-part-1/) approach, and using Domain Driven Design to build out the business logic. This isolates the business domain from external concerns, making it easy to integrate with different systems by "plugging" in adaptors to back-end databases (i.e. Repository pattern) and layering decoupled API layers on top (i.e. REST, GraphQL, SOAP/XML).
 
